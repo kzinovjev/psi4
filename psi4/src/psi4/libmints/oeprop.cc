@@ -2028,7 +2028,7 @@ std::tuple<SharedMatrix, SharedMatrix, SharedMatrix, SharedMatrix> PopulationAna
     if (!is_converged) throw ConvergenceError<int>("MBIS", max_iter, conv, delta_rho_max_0, __FILE__, __LINE__);
 
     // Final population and width
-    if (print_output && debug >= 1) {
+    if (print_output) {
         for (int atom = 0; atom < num_atoms; atom++) {
             for (int m = 0; m < mA[atom]; m++) {
                 outfile->Printf("  FINAL ATOM %d, SHELL %d, POP %8.5f, WIDTH %8.5f\n", atom + 1, m + 1, Nai[atom][m],
